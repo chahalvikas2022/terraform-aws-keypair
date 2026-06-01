@@ -21,7 +21,7 @@ To use this module, you should have Terraform installed and configured for AWS. 
 
 ```hcl
 module "private_keypair" {
-  source                     = "git::https://github.com/opsstation/terraform-aws-keypair.git?ref=v1.0.0"
+  source                     = "git::https://github.com/chahalvikas2022/terraform-aws-keypair.git"
   name                       = "private-key"
   environment                = "test"
   label_order                = ["name", "environment"]
@@ -33,23 +33,23 @@ module "private_keypair" {
 ## Example: s3 complete
 ```hcl
 module "public_keypair" {
-  source      = "git::https://github.com/opsstation/terraform-aws-keypair.git?ref=v1.0.0"
+  source      = "git::https://github.com/chahalvikas2022/terraform-aws-keypair.git"
   name        = "public-key"
   environment = "test"
   label_order = ["name", "environment"]
-  public_key  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDiauRRhSL3KprhrjrepCfebnrAERnFMR8DFXgwM4rLmXdI9M6sbP1dn2o9Vurf8Bznm2uBZttTPTi8lxnS4YSG4Q+F0nU98tYxXSEb66zp8b/ZcICT2kqMC6suEO3U7IG8wasXCoxOyJ5lqBi8xrmQKBgTZKk6EvO9SSpSishpAP2hafnIuP29RqipraT9UvNeMSbM3/OTjV9I2/KHd/YfSzrUQbnQ6zTgNawyZ8CaRo/Intot3HgU/5PsOKPcTlarb0sFXuWDhdcE+/8TPsjFTPOzMFBDr+H11Oq+cxMoQ/YMXLo/KmokM/km/NfLvEvscuDFzA7JLURiaV33MoQxxIfaTwvrQZ9UJ4gdzd4WhF1sVNB3MP7z07I8pBepJVwca1fTWI9hvn6xK3a6nfD6p8gKiP5xlINMZX7Oi9tmhFuv4vxkYiGZvAI12va9InJFZUQEHmJaIr4g7Faczl5oFK6TYc1FRut9ve4v0JKbz7Od3Uwyqd6rSeHxm/obp1E= satish@satish"
+  public_key  = ""
 
 }
 ```
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/opsstation/terraform-aws-keypair/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/chahalvikas2022/terraform-aws-keypair/tree/master/_example) directory within this repository.
 
 ## Author
-Your Name Replace **MIT** and **opsstation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Your Name Replace **MIT** and **vikas** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/opsstation/terraform-aws-keypair/blob/master/LICENSE) file for details.
+This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/chahalvikas2022/terraform-aws-keypair/blob/master/LICENSE) file for details.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -69,9 +69,9 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:opsstation/terraform-aws-labels.git | v1.0.0 |
+| Name | Source                                                       | Version |
+|------|--------------------------------------------------------------|---------|
+| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:chahalvikas2022/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -82,18 +82,18 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_attributes"></a> [attributes](#input\_attributes) | Additional attributes (e.g. `1`). | `list(string)` | `[]` | no |
-| <a name="input_create_private_key_enabled"></a> [create\_private\_key\_enabled](#input\_create\_private\_key\_enabled) | Determines whether a private key will be created | `bool` | `false` | no |
-| <a name="input_enable_key_pair"></a> [enable\_key\_pair](#input\_enable\_key\_pair) | A boolean flag to enable/disable key pair. | `bool` | `true` | no |
-| <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
-| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | label order, e.g. `name`,`application`. | `list(any)` | `[]` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'OpsStation'. | `string` | `"OpsStation"` | no |
-| <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
-| <a name="input_private_key_algorithm"></a> [private\_key\_algorithm](#input\_private\_key\_algorithm) | Name of the algorithm to use when generating the private key. Currently-supported values are `RSA` and `ED25519` | `string` | `"RSA"` | no |
-| <a name="input_public_key"></a> [public\_key](#input\_public\_key) | Name  (e.g. `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`). | `string` | `""` | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-aws-keypair?ref=v1.0.0"` | no |
+| Name | Description                                                                                                     | Type | Default                                                                 | Required |
+|------|-----------------------------------------------------------------------------------------------------------------|------|-------------------------------------------------------------------------|:--------:|
+| <a name="input_attributes"></a> [attributes](#input\_attributes) | Additional attributes (e.g. `1`).                                                                               | `list(string)` | `[]`                                                                    | no |
+| <a name="input_create_private_key_enabled"></a> [create\_private\_key\_enabled](#input\_create\_private\_key\_enabled) | Determines whether a private key will be created                                                                | `bool` | `false`                                                                 | no |
+| <a name="input_enable_key_pair"></a> [enable\_key\_pair](#input\_enable\_key\_pair) | A boolean flag to enable/disable key pair.                                                                      | `bool` | `true`                                                                  | no |
+| <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`).                                                                    | `string` | `""`                                                                    | no |
+| <a name="input_label_order"></a> [label\_order](#input\_label\_order) | label order, e.g. `name`,`application`.                                                                         | `list(any)` | `[]`                                                                    | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'vikas'.                                                                                          | `string` | `"vikas"`                                                               | no |
+| <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`).                                                                                | `string` | `""`                                                                    | no |
+| <a name="input_private_key_algorithm"></a> [private\_key\_algorithm](#input\_private\_key\_algorithm) | Name of the algorithm to use when generating the private key. Currently-supported values are `RSA` and `ED25519` | `string` | `"RSA"`                                                                 | no |
+| <a name="input_public_key"></a> [public\_key](#input\_public\_key) | Name  (e.g. `ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQ`).                                 | `string` | `""`                                                                    | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo                                                                                   | `string` | `"https://github.com/chahalvikas2022/terraform-aws-keypair?ref=v1.0.0"` | no |
 
 ## Outputs
 
